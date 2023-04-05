@@ -4,7 +4,7 @@
     "rules": {
       "prettier/prettier": "off",
       "spaced-comment": "off",
-      "no-console": "warn",
+      "no-console": "off",
       "consistent-return": "off",
       "func-names": "off",
       "object-shorthand": "off",
@@ -15,7 +15,8 @@
       "class-methods-use-this": "off",
       "prefer-destructuring": ["off", { "object": true, "array": false }],
       "no-unused-vars": ["error", { "argsIgnorePattern": "req|res|next|val" }],
-      "new-cap":"off"
+      "new-cap":"off",
+      "node/no-unsupported-features/es-syntax": "off"
     }
 }
   
