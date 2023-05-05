@@ -17,14 +17,13 @@ app.use(express.json());
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 
-app.all('*', (req, res, next)=> {
+app.all('*', (req, res, next) => {
   // const error =new Error(`Can't find ${req.originalUrl} on this server`);
   // error.status = 'fail';
   // error.statusCode = 404;
-  
   const message = `Can't find ${req.originalUrl} on this server`;
   next(new AppError(message, 404));
-})
+});
 
 app.use(globalErrorHandler);
 
