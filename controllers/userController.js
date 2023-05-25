@@ -1,34 +1,40 @@
-exports.getAllUsers = (req, res) =>{
-    res.status(500).json({
-        status: "error",
-        message: "No Users right now"
-    })
-}
+const { catchAsync } = require('../utils/catchAsync');
+const User = require('../models/user-model');
 
-exports.getUser = (req, res) =>{
-    res.status(500).json({
-        status: "error",
-        message: "No Users right now"
-    })
-}
+exports.getAllUsers = catchAsync(async (req, res, next) => {
+  const users = await User.find();
 
-exports.createAUser = (req, res) =>{
-    res.status(500).json({
-        status: "error",
-        message: "No Users right now"
-    })
-}
+  res.status(200).json({
+    status: 'success',
+    result: users.length,
+    data: { users },
+  });
+});
 
-exports.updateAUser = (req, res) =>{
-    res.status(500).json({
-        status: "error",
-        message: "No Users right now"
-    })
-}
+exports.getUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'No Users right now',
+  });
+};
 
-exports.deleteAUser = (req, res) =>{
-    res.status(500).json({
-        status: "error",
-        message: "No Users right now"
-    })
-}
+exports.createAUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'No Users right now',
+  });
+};
+
+exports.updateAUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'No Users right now',
+  });
+};
+
+exports.deleteAUser = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    message: 'No Users right now',
+  });
+};
